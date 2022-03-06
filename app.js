@@ -148,9 +148,9 @@ function renderState() {
       if (gameState.gameType === "PlayerVsComputer") {
         setTimeout(function () {
           let blockSpot;
-          if ((blockSpot = checkAlmostWin("x"))) {
+          if ((blockSpot = checkAlmostWin("o"))) {
             cellClicked(blockSpot[0], blockSpot[1]);
-          } else if ((blockSpot = checkAlmostWin("o"))) {
+          } else if ((blockSpot = checkAlmostWin("x"))) {
             cellClicked(blockSpot[0], blockSpot[1]);
           } else {
             const randomEmptySpot = randomlyChooseEmptySpot();
@@ -363,8 +363,18 @@ function checkWinner() {
   }
 }
 
-function cellClicked(x, y) {
+function cellClicked(x, y, manual) {
   if (gameState.board[x][y]) {
+    return;
+  }
+  if (gameState.winner) {
+    return;
+  }
+  if (
+    gameState.gameType === "PlayerVsComputer" &&
+    manual &&
+    gameState.currentPlayer === "o"
+  ) {
     return;
   }
   gameState.board[x][y] = gameState.currentPlayer;
