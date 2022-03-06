@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="tic-tac-toe.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="app.js"></script>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="winnerAnnouncement"></h1>
+    </div>
+    <div>
+      <button id="resetButton" onclick="resetGame()">Start Over</button>
+    </div>
+    <div id="chooseGameTypeSection">
+      <h4>Choose Game Type</h4>
+      <button onclick="choosePlayerVsPlayer()">Player vs Player</button>
+      <button onclick="choosePlayerVsComputer()">Player vs Computer</button>
+    </div>
+    <div id="submitNamesSection">
+      <div>
+        <h4>Enter Player 1's name</h4>
+        <input id="player1Input" />
+      </div>
+      <div id="player2NamesSection">
+        <h4>Enter Player 2's name</h4>
+        <input id="player2Input" />
+      </div>
+      <button id="enterNamesButton" onclick="submitNames()">Submit</button>
+    </div>
+    <div class="board" id="board">
+      <div class="container">
+        <div class="cell" onclick="cellClicked(0,0)">
+          <span id="X0,0">X</span><span id="O0,0">O</span>
+        </div>
+        <div class="cell" onclick="cellClicked(1,0)">
+          <span id="X1,0">X</span><span id="O1,0">O</span>
+        </div>
+        <div class="cell" onclick="cellClicked(2,0)">
+          <span id="X2,0">X</span><span id="O2,0">O</span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cell" onclick="cellClicked(0,1)">
+          <span id="X0,1">X</span><span id="O0,1">O</span>
+        </div>
+        <div class="cell" onclick="cellClicked(1,1)">
+          <span id="X1,1">X</span><span id="O1,1">O</span>
+        </div>
+        <div class="cell" onclick="cellClicked(2,1)">
+          <span id="X2,1">X</span><span id="O2,1">O</span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cell" onclick="cellClicked(0,2)">
+          <span id="X0,2">X</span><span id="O0,2">O</span>
+        </div>
+        <div class="cell" onclick="cellClicked(1,2)">
+          <span id="X1,2">X</span><span id="O1,2">O</span>
+        </div>
+        <div class="cell" onclick="cellClicked(2,2)">
+          <span id="X2,2">X</span><span id="O2,2">O</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
